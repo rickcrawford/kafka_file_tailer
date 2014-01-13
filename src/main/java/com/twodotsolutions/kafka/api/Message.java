@@ -31,6 +31,10 @@ public class Message {
 		return new MessagePack().write(message);
 	}
 
+	public static Message parse(String line) throws IOException {
+		return new Message();
+	}
+
 	public String toString() {
 		return Objects.toString(this);
 	}
