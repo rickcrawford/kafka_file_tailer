@@ -24,12 +24,27 @@ You will of course need to [download](http://kafka.apache.org/downloads.html) th
 
 When you download the binaries, you need to kick off Kafka and Zookeeper. For the sake of this application, use the default configurations in the `config/` directory.
 
-Start Kafka:
-```bash
-bin/kafka-server-start.sh config/server.properties
-```
+
 
 Start Zookeeper:
 ```bash
-bin/zookeeper-server-start.sh config/zookeeper.properties
+$ bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
+
+Start Kafka:
+```bash
+$ bin/kafka-server-start.sh config/server.properties
+```
+
+To Load files, run the `load-data` command:
+
+```bash
+$ java ... com.twodotsolutions.kafka.KafkaApplication load-data -l sample.log conf/config.yaml
+```
+
+To process files, run the `read-data` command:
+
+```bash
+$ java ... com.twodotsolutions.kafka.KafkaApplication read-data conf/config.yaml
+```
+

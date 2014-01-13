@@ -67,8 +67,14 @@ public class MessageProducer implements AutoCloseable {
 
 		List<KeyedMessage<UUID, Message>> messages = new ArrayList<KeyedMessage<UUID, Message>>();
 		for (Message Message : events) {
+			// Note, I am using the UUID, Message as an example. In this case
+			// you would not want to
+			// randomly generate a new UUID, but use some unique key for your
+			// object. This was just
+			// an example of how to create a custom serializer, which in this
+			// was case UUIDSerializer!
 			messages.add(new KeyedMessage<UUID, Message>(this.topic, UUID
-					.fromString(Message.getUUID()), Message));
+					.randomUUID(), Message));
 		}
 		producer.send(messages);
 	}

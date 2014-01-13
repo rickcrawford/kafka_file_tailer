@@ -9,7 +9,7 @@ kafka:
   autoOffsetReset: largest
   serializerClass: kafka.serializer.StringEncoder
   brokerList: localhost:9092
-  topic: messages
+  topic: tailfile
   groupId: group1
   
 zookeeper:
@@ -152,7 +152,7 @@ logging:
     # Set specific levels
     "com.sun.jersey.api.client": DEBUG
     "com.yammer": INFO
-    "com.rickcrawford.kafka": DEBUG
+    "com.twodotsolutions": DEBUG
 
   # ...
   # Settings for logging to stdout.
